@@ -52,4 +52,18 @@ code:
 
 #密码加密传输，前端公钥加密，后端私钥解密
 rsa:
-  private_key: MIIBUwIBADANBgkqhkiG9w0BAQEFAASCAT0wggE5AgEAAkEA0vfvyTdGJkdbHkB8mp0f3FE0GYP3AYPaJF7jUd1M0XxFSE2ceK3k2kw20YvQ09NJKk+OMjWQl9WitG9pB6tSCQIDAQABAkA2SimBrWC2/wvauBuYqjCFwLvYiRYqZKThUS3MZlebXJiLB+Ue/gUifAAKIg1avttUZsHBHrop4qfJCwAI0+YRAiEA+W3NK/RaXtnRqmoUUkb59zsZUBLpvZgQPfj1MhyHDz0CIQDYhsAhPJ3mgS64NbUZmGWuuNKp5coY2GIj/zYDMJp6vQIgUueLFXv/eZ1ekgz2Oi67MNCk5jeTF2BurZqNLR3MSmUCIFT3Q6uHMtsB9Eha4u7hS31tj1UWE+D+ADzp59MGnoftAiBeHT7gDMuqeJHPL4b+kC+gzV4FGTfhR9q3tTbklZkD2A==
+  private_key: MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAOdwhIRtw9bkUm/pt5rrKY2C1HhrsDcsZLEdi8HdPZ5zsqWfEU+GHPBn58ozOOy+stopnHlIXFwCaPLBGoKMrySux06+Lf2EIb7k2YkaA0t7oZ8D4bd4gUfpeaDmSpyLJdPbvFqIVJO720YhuTxvHPHY3UM5HvVBZDJtPMnGGifHAgMBAAECgYADVIQjn6y0t95Ty+ofaYjUh3BlNy9268WbItCy/mr3j7SfW3WVTlm2P9h++VO1XF0YdIbS2+6wSDyYWZz3Ce0vM+9PzHibkg2wh78Pc9C5PgXVAuu20V4L9CIoERU2VnPHON1aJEsQEQROe5c4mIb3wLm5AHH5z7ewSoJPtPPC+QJBAPU8lT3PY8nInUh4urVHTngzwjyrIkdJfvIOxcAcaLxuBNTTdLChvePyehK2H7lzyOsAVTTn3JfuDOIVdWoXOksCQQDxmOnh/WbIZOrtHfg79ydupCXfLWxy847Sd4+dSCZTKnWJmrYo0FQOpVX+zdpETZjcFo5peyqpmOSbjM1dg1r1AkEAyzfc5E+LfZcE3x1MexQP7oPVnbiiuzgoPiYHsN7Z2+u/jS19MTGWzeINTpwlReSwxiyMbz8ECdJ2UpM9rSB6aQJBAIWiCSwhV+rcNz206AtzJ/KBBRmvLF9g7MzpqRxcPiaeQ6k7VCq7IOOA/FIWVvaU3UpPh7I8mFp64WhQt39UGskCQQCkovwdLsxxlzJ9XS77ws5hc4YJDFYhxdQZgCAPlZ1UdiqqJ4nlLJP8FREXD4e1ke71GDiE/BAqRT0TYbLt521u
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
